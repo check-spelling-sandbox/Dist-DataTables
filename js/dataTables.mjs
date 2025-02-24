@@ -829,7 +829,7 @@ DataTable.ext = _ext = {
 		 * `{type}-asc` and `{type}-desc` together. It is generally recommended
 		 * that only `{type}-pre` is used, as this provides the optimal
 		 * implementation in terms of speed, although the others are provided
-		 * for compatibility with existing Javascript sort functions.
+		 * for compatibility with existing JavaScript sort functions.
 		 *
 		 * `{type}-pre`: Functions defined take a single parameter:
 		 *
@@ -839,7 +839,7 @@ DataTable.ext = _ext = {
 		 *
 		 * * `{*}` Data to be sorted upon
 		 *
-		 * `{type}-asc` and `{type}-desc`: Functions are typical Javascript sort
+		 * `{type}-asc` and `{type}-desc`: Functions are typical JavaScript sort
 		 * functions, taking two parameters:
 		 *
 	     *  1. `{*}` Data to compare to the second parameter
@@ -1063,7 +1063,7 @@ var _intVal = function ( s ) {
 };
 
 // Convert from a formatted number with characters other than `.` as the
-// decimal place, to a Javascript number
+// decimal place, to a JavaScript number
 var _numToDecimal = function ( num, decimalPoint ) {
 	// Cache created regular expressions for speed as this function is called often
 	if ( ! _re_dic[ decimalPoint ] ) {
@@ -1998,7 +1998,7 @@ function _fnColumnOptions( oSettings, iCol, oOptions )
 			oCol._sManualType = oOptions.sType;
 		}
 	
-		// `class` is a reserved word in Javascript, so we need to provide
+		// `class` is a reserved word in JavaScript, so we need to provide
 		// the ability to use a valid name for the camel case input
 		if ( oOptions.className && ! oOptions.sClass )
 		{
@@ -2540,7 +2540,7 @@ function _fnColumnsFromHeader( cell )
 }
 /**
  * Add a data array to the table, creating DOM node etc. This is the parallel to
- * _fnGatherData, but for adding rows from a Javascript source, rather than a
+ * _fnGatherData, but for adding rows from a JavaScript source, rather than a
  * DOM source.
  *  @param {object} settings dataTables settings object
  *  @param {array} data data array to be added
@@ -7574,7 +7574,7 @@ _api_register( 'page.info()', function () {
  */
 _api_register( 'page.len()', function ( len ) {
 	// Note that we can't call this function 'length()' because `length`
-	// is a Javascript property of functions which defines how many arguments
+	// is a JavaScript property of functions which defines how many arguments
 	// the function expects.
 	if ( len === undefined ) {
 		return this.context.length !== 0 ?
@@ -10314,7 +10314,7 @@ DataTable.models.oColumn = {
  * from v1.10 onwards the primary interface is camel case. In order to avoid
  * breaking backwards compatibility utterly with this change, the Hungarian
  * version is still, internally the primary interface, but is is not documented
- * - hence the @name tags in each doc comment. This allows a Javascript function
+ * - hence the @name tags in each doc comment. This allows a JavaScript function
  * to create a map from Hungarian notation to camel case (going the other direction
  * would require each property to be listed, which would add around 3K to the size
  * of DataTables, while this method is about a 0.5K hit).
@@ -10333,7 +10333,7 @@ DataTable.defaults = {
 	/**
 	 * An array of data to use for the table, passed in at initialisation which
 	 * will be used in preference to any data which is already in the DOM. This is
-	 * particularly useful for constructing tables purely in Javascript, for
+	 * particularly useful for constructing tables purely in JavaScript, for
 	 * example with a custom Ajax call.
 	 */
 	"aaData": null,
@@ -10400,7 +10400,7 @@ DataTable.defaults = {
 	 * * `dataSrc` - By default DataTables will look for the property `data` (or
 	 *   `aaData` for compatibility with DataTables 1.9-) when obtaining data
 	 *   from an Ajax source or for server-side processing - this parameter
-	 *   allows that property to be changed. You can use Javascript dotted
+	 *   allows that property to be changed. You can use JavaScript dotted
 	 *   object notation to get a data source for multiple levels of nesting, or
 	 *   it my be used as a function. As a function it takes a single parameter,
 	 *   the JSON returned from the server, which can be manipulated as
@@ -11225,8 +11225,8 @@ DataTable.defaults.column = {
 	 * * `string` - read an object property from the data source. There are
 	 *   three 'special' options that can be used in the string to alter how
 	 *   DataTables reads the data from the source object:
-	 *    * `.` - Dotted Javascript notation. Just as you use a `.` in
-	 *      Javascript to read from nested objects, so to can the options
+	 *    * `.` - Dotted JavaScript notation. Just as you use a `.` in
+	 *      JavaScript to read from nested objects, so to can the options
 	 *      specified in `data`. For example: `browser.version` or
 	 *      `browser.name`. If your object parameter name contains a period, use
 	 *      `\\` to escape it - i.e. `first\\.name`.
@@ -11294,8 +11294,8 @@ DataTable.defaults.column = {
 	 * * `string` - read an object property from the data source. There are
 	 *   three 'special' options that can be used in the string to alter how
 	 *   DataTables reads the data from the source object:
-	 *    * `.` - Dotted Javascript notation. Just as you use a `.` in
-	 *      Javascript to read from nested objects, so to can the options
+	 *    * `.` - Dotted JavaScript notation. Just as you use a `.` in
+	 *      JavaScript to read from nested objects, so to can the options
 	 *      specified in `data`. For example: `browser.version` or
 	 *      `browser.name`. If your object parameter name contains a period, use
 	 *      `\\` to escape it - i.e. `first\\.name`.
@@ -11398,7 +11398,7 @@ DataTable.defaults.column = {
 	 * The type allows you to specify how the data for this column will be
 	 * ordered. Four types (string, numeric, date and html (which will strip
 	 * HTML tags before ordering)) are currently available. Note that only date
-	 * formats understood by Javascript's Date() object will be accepted as type
+	 * formats understood by JavaScript's Date() object will be accepted as type
 	 * date. For example: "Mar 26, 2008 5:03 PM". May take the values: 'string',
 	 * 'numeric', 'date' or 'html' (by default). Further types can be adding
 	 * through plug-ins.
@@ -11450,7 +11450,7 @@ DataTable.models.oSettings = {
 		/**
 		 * Delay the creation of TR and TD elements until they are actually
 		 * needed by a driven page draw. This can give a significant speed
-		 * increase for Ajax source and Javascript source data, but makes no
+		 * increase for Ajax source and JavaScript source data, but makes no
 		 * difference at all for DOM and server-side processing tables.
 		 * Note that this parameter will be set by the initialisation routine. To
 		 * set a default use {@link DataTable.defaults}.
@@ -12901,7 +12901,7 @@ var __numericReplace = function ( d, decimalPlace, re1, re2 ) {
 
 	// If a decimal place other than `.` is used, it needs to be given to the
 	// function so we can detect it and replace with a `.` which is the only
-	// decimal place Javascript recognises - it is not locale aware.
+	// decimal place JavaScript recognises - it is not locale aware.
 	if ( decimalPlace ) {
 		d = _numToDecimal( d, decimalPlace );
 	}
