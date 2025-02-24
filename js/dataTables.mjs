@@ -2155,7 +2155,7 @@ function _fnColumnIndexToVisible( oSettings, iMatch )
  *  @returns {int} i the number of visible columns
  *  @memberof DataTable#oApi
  */
-function _fnVisbleColumns( settings )
+function _fnVisibleColumns( settings )
 {
 	var layout = settings.aoHeader;
 	var columns = settings.aoColumns;
@@ -3526,7 +3526,7 @@ function _emptyRow ( settings ) {
 
 	return $( '<tr/>' )
 		.append( $('<td />', {
-			'colSpan': _fnVisbleColumns( settings ),
+			'colSpan': _fnVisibleColumns( settings ),
 			'class':   settings.oClasses.empty.row
 		} ).html( zero ) )[0];
 }
@@ -8300,7 +8300,7 @@ var __details_add = function ( ctx, row, data, klass )
 			
 			$('td', created)
 				.addClass( k )
-				.html( r )[0].colSpan = _fnVisbleColumns( ctx );
+				.html( r )[0].colSpan = _fnVisibleColumns( ctx );
 
 			rows.push( created[0] );
 		}
@@ -8412,7 +8412,7 @@ var __details_events = function ( settings )
 
 			// Update the colspan for the details rows (note, only if it already has
 			// a colspan)
-			var row, visible = _fnVisbleColumns( ctx );
+			var row, visible = _fnVisibleColumns( ctx );
 
 			for ( var i=0, ien=data.length ; i<ien ; i++ ) {
 				row = data[i];
@@ -8867,7 +8867,7 @@ _api_registerPlural( 'columns().visible()', 'column().visible()', function ( vis
 			// Update colspan for no records display. Child rows and extensions will use their own
 			// listeners to do this - only need to update the empty table item here
 			if ( ! settings.aiDisplay.length ) {
-				$(settings.nTBody).find('td[colspan]').attr('colspan', _fnVisbleColumns(settings));
+				$(settings.nTBody).find('td[colspan]').attr('colspan', _fnVisibleColumns(settings));
 			}
 	
 			_fnSaveState( settings );
