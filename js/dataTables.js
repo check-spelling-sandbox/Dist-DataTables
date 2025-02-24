@@ -4549,7 +4549,7 @@
 	 *  @param {string} sSearch string to search for
 	 *  @param {bool} bRegex treat as a regular expression or not
 	 *  @param {bool} bSmart perform smart filtering or not
-	 *  @param {bool} bCaseInsensitive Do case insensitive matching or not
+	 *  @param {bool} bCaseInsensitive Do case-insensitive matching or not
 	 *  @returns {RegExp} constructed object
 	 *  @memberof DataTable#oApi
 	 */
@@ -10064,7 +10064,7 @@
 	 */
 	DataTable.models.oSearch = {
 		/**
-		 * Flag to indicate if the filtering should be case insensitive or not
+		 * Flag to indicate if the filtering should be case-insensitive or not
 		 */
 		"caseInsensitive": true,
 	
