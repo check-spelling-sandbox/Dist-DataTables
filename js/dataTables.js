@@ -2715,10 +2715,10 @@
 		}
 	
 		if ( type === 'filter' ) {
-			var fomatters = DataTable.ext.type.search;
+			var formatters = DataTable.ext.type.search;
 	
-			if ( fomatters[ col.sType ] ) {
-				cellData = fomatters[ col.sType ]( cellData );
+			if ( formatters[ col.sType ] ) {
+				cellData = formatters[ col.sType ]( cellData );
 			}
 		}
 	
