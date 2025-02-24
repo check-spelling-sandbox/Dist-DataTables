@@ -2232,7 +2232,7 @@
 	/**
 	 * Allow the result from a type detection function to be `true` while
 	 * translating that into a string. Old type detection functions will
-	 * return the type name if it passes. An obect store would be better,
+	 * return the type name if it passes. An object store would be better,
 	 * but not backwards compatible.
 	 *
 	 * @param {*} typeDetect Object or function for type detection
@@ -4128,7 +4128,7 @@
 	
 			var newData = typeof ajaxData === 'function' ?
 				ajaxData( data, oSettings ) :  // fn can manipulate data or return
-				ajaxData;                      // an object object or array to merge
+				ajaxData;                      // an object or array to merge
 	
 			// If the function returned something, use that alone
 			data = typeof ajaxData === 'function' && newData ?
@@ -12370,7 +12370,7 @@
 					},
 					order: {
 						pre: function (d) {
-							// The renderer gives us Moment, Luxon or Date obects for the sorting, all of which have a
+							// The renderer gives us Moment, Luxon or Date objects for the sorting, all of which have a
 							// `valueOf` which gives milliseconds epoch
 							return d.valueOf();
 						}
